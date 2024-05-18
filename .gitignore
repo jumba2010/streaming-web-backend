@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules
+# macOS
+.DS_Store
+
+# AWS
+.aws-sam/
+aws-config.json
+.aws-credentials.json
+.aws-exports.js
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Kubernetes
+.kube/
+*.log
+*.log.*
+*.log-*
+*.pid
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+.serverless

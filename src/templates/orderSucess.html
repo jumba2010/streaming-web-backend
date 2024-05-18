@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Common table styling */
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        /* Common table cell styling */
+        th, td {
+            padding: 8px;
+        }
+    
+        /* Style table header */
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+    
+        /* Style table rows */
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+    
+        /* Style total row */
+        .total-row {
+            font-weight: bold;
+        }
+    
+        /* Specific table styling */
+        #summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+    
+        /* Style table rows */
+        #summary-table table {
+            border: none; /* Remove borders from table rows */
+        }
+    
+        /* Style table cells */
+        #summary-table td {
+            padding: 8px;
+        }
+    
+        /* Align labels on the left to the right */
+        #summary-table .label {
+            text-align: right;
+            font-weight: bold;
+            width: 50%; /* Adjust width as needed */
+        }
+    </style>
+    
+</head>
+<body>
+    <h2>Encomenda confirmada</h2>
+    <h2>Encomenda Nr. {{orderNumber}}</h2>
+    <h3>Dados do Cliente</h3>
+    <p><strong>Nome:</strong> {{clientName}}</p>
+    <p><strong>Email:</strong> {{clientEmail}}</p>
+    <p><strong>Nr. de Telefone:</strong> {{clientPhone}}</p>
+    <p><strong>Endereço:</strong> {{deliveryAddress}}</p>
+
+    <h3>Items da Encomenda</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Ref#</th>
+                <th>Nome do Item</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#items}}
+            <tr>
+                <td>{{refNumber}}</td>
+                <td>{{itemName}}</td>
+                <td>{{quantity}}</td>
+                <td>{{price}} MZN</td>
+                <td>{{total}} MZN</td>
+            </tr>
+            {{/items}}
+        </tbody>
+    </table>
+  <br/>
+    <div style="border: none; border-width: 0px;">
+        <div style="display: flex; justify-content: space-between;font-size: small;">
+            <div style="width: 60%;"></div>
+            <div class="label">Valor da Encomenda: </div>
+            <div class="total-row">{{orderAmount}} MZN</div>
+        </div>
+        <div style="display: flex; justify-content: space-between;font-size: small;">
+            <div style="width: 60%;"></div>
+            <div class="label">Shipping: </div>
+            <div class="total-row">{{shipping}} MZN</div>
+        </div>
+        <div style="display: flex; justify-content: space-between;font-size: small;">
+            <div style="width: 60%;"></div>
+            <div class="label">Serviços: </div>
+            <div class="total-row">{{services}} MZN</div>
+        </div>
+        <div style="display: flex; justify-content: space-between;font-size: small;">
+            <div style="width: 60%;"></div>
+            <div class="label">Total: </div>
+            <div class="total-row">{{totalAmount}} MZN</div>
+        </div>
+    </div>
+    
+</body>
+</html>

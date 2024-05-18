@@ -1,0 +1,34 @@
+service: tws-auto-parts
+provider:
+  name: aws
+  runtime:  nodejs18.x
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: "*"
+  environment:
+    AUTO_PARTS_COGNITO_CLIENT_ID: qi56pip3onejasn1i3m018tqm
+    AUTO_PARTS_COGNITO_USER_POOL_ID: us-east-1_U31sIyL5N
+    AWS_S3_BUCKET_NAME: tws-auto-images
+    CLOUDFRONT_DOMAIN: https://d2u1nlngygjtd2.cloudfront.net
+    C_AWS_REGION: us-east-1
+    JWT_PRIVATE_KEY: jwtPrivateKey
+functions:
+  app:
+    handler: index.handler
+    environment:
+      AUTO_PARTS_COGNITO_CLIENT_ID: ${self:provider.environment.AUTO_PARTS_COGNITO_CLIENT_ID}
+      AUTO_PARTS_COGNITO_USER_POOL_ID: ${self:provider.environment.AUTO_PARTS_COGNITO_USER_POOL_ID}
+      AWS_S3_BUCKET_NAME: ${self:provider.environment.AWS_S3_BUCKET_NAME}
+      CLOUDFRONT_DOMAIN: ${self:provider.environment.CLOUDFRONT_DOMAIN}
+      C_AWS_REGION: ${self:provider.environment.C_AWS_REGION}
+      JWT_PRIVATE_KEY: ${self:provider.environment.JWT_PRIVATE_KEY}
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+      - http:
+          path: /{proxy+}
+          method: OPTIONS
