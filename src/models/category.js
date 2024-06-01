@@ -1,7 +1,7 @@
 const constants = require("../utils/constants");
 
-const newArrivalSchema = {
-  TableName: constants.NEW_ARRIVALS_TABLE,
+const popularCategorySchema = {
+  TableName: constants.CATEGORY_TABLE,
   BillingMode: 'PAY_PER_REQUEST',
   AttributeDefinitions: [
     { AttributeName: 'id', AttributeType: 'S' },
@@ -19,4 +19,4 @@ const newArrivalSchema = {
   ],
 };
 
-module.exports = newArrivalSchema;
+module.exports = popularCategorySchema;

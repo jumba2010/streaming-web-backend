@@ -24,50 +24,38 @@ app.use(bodyParser.json());
 DynamoDBSchemaUpdater.update();
 
 // Routes
-const carPartRoutes = require('./src/routes/carPartRoute');
+const movieRoutes = require('./src/routes/movieRoute');
 const orderRoutes = require('./src/routes/orderRoute');
 const paymentRoutes = require('./src/routes/paymentRoute');
 const promotionRoutes = require('./src/routes/promotionRoute');
 const userRoutes = require('./src/routes/userRoute');
-const vehicleRoutes = require('./src/routes/vehicleRoute');
+const categoryRoute = require('./src/routes/categoryRoute');
 const fileUploadRoutes = require('./src/routes/fileUploadRoute');
 const authRoutes = require('./src/routes/authRoute');
-const auditRoute = require('./src/routes/auditRoute');
-const bestSellerRoute = require('./src/routes/bestSellerRoute');
-const clientRoute = require('./src/routes/clientRoute');
-const newArrivalsRoute = require('./src/routes/newArrivalsRoute');
-const popularCategoryRoute = require('./src/routes/popularCategoryRoute');
-const popularProductRoute = require('./src/routes/popularProductRoute');
-const specialOfferRoute = require('./src/routes/specialOfferRoute');
-const stockRoute = require('./src/routes/stockRoute');
-const topRatedRoute = require('./src/routes/topRatedRoute');
+const favouriteRoutes = require('./src/routes/favouriteRoute');
+const clientRoutes = require('./src/routes/clientRoute');
+const playListRoutes = require('./src/routes/playListRoute');
+const subscriptionRoutes = require('./src/routes/subscriptionRoute');
+const watchListRoutes = require('./src/routes/watchListRoute');
 const visitRoute = require('./src/routes/visitRoute');
-const wishListRoute = require('./src/routes/wishListRoute');
-const reviewRoute = require('./src/routes/reviewRoute');
-const viewRoute = require('./src/routes/viewRoute');
+const favouriteRoute = require('./src/routes/favouriteRoute');
 
 // Mount the route files
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/users', userRoutes);
-app.use('/api/v1/car-parts', carPartRoutes);
+app.use('/api/v1/movies', movieRoutes);
 app.use('/api/v1/orders', orderRoutes);
 app.use('/api/v1/payments', paymentRoutes);
 app.use('/api/v1/promotions', promotionRoutes);
-app.use('/api/v1/vehicles', vehicleRoutes);
+app.use('/api/v1/categories', categoryRoute);
 app.use('/api/v1/file-upload', fileUploadRoutes);
-app.use('/api/v1/auditing', auditRoute);
-app.use('/api/v1/best-sellers', bestSellerRoute);
-app.use('/api/v1/clients', clientRoute);
-app.use('/api/v1/new-arrivals', newArrivalsRoute);
-app.use('/api/v1/popular-categories', popularCategoryRoute);
-app.use('/api/v1/popular-products', popularProductRoute);
-app.use('/api/v1/special-offers', specialOfferRoute);
-app.use('/api/v1/stocks', stockRoute);
-app.use('/api/v1/top-rated', topRatedRoute);
+app.use('/api/v1/favourites', favouriteRoutes);
+app.use('/api/v1/playlist', playListRoutes);
+app.use('/api/v1/clients', clientRoutes);
+app.use('/api/v1/subscriptions', subscriptionRoutes);
+app.use('/api/v1/watchlist', watchListRoutes);
 app.use('/api/v1/visits', visitRoute);
-app.use('/api/v1/wish-list', wishListRoute);
-app.use('/api/v1/reviews', reviewRoute);
-app.use('/api/v1/views', viewRoute);
+app.use('/api/v1/wish-list', favouriteRoute);
 
 
 // Read HTML templates and create or update templates on AWS

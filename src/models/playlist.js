@@ -1,7 +1,7 @@
 const constants = require("../utils/constants");
 
-const auditSchema = {
-  TableName: constants.AUDIT_TABLE,
+const reviewSchema = {
+  TableName: constants.PLAY_LIST_TABLE,
   AttributeDefinitions: [
     { AttributeName: 'id', AttributeType: 'S' },
     { AttributeName: 'createdAt', AttributeType: 'S' } // Use 'S' for string data type
@@ -19,4 +19,4 @@ const auditSchema = {
   ],
 };
 
-module.exports = auditSchema;
+module.exports = reviewSchema;

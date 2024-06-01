@@ -38,7 +38,7 @@ const create = async (tableName,payload) => {
 };
 
 
-const findBySucursalId= async (tableName, sucursalId) => {
+const findBySucursalId = async (tableName, sucursalId) => {
   try {
     const command = new QueryCommand({
       IndexName: 'sucursalId-index', 

@@ -37,7 +37,7 @@ const getImagesFromS3 = async (req, res) => {
     // Extract data from request
     const {fileNames}  = req.body;
 
-    // Call the carPartService.createCarPart method
+    // Call the movieService.createMovie method
     const imageURls = await s3Service.getImagesFromS3(fileNames);
 
     res.status(200).json(imageURls);

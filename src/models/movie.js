@@ -1,7 +1,7 @@
 const constants = require("../utils/constants");
 
-const vehiclechema = {
-  TableName: constants.VEHICLE_TABLE,
+const movieSchema = {
+  TableName: constants.MOVIE_TABLE,
   AttributeDefinitions: [
     { AttributeName: 'id', AttributeType: 'S' },
     { AttributeName: 'createdAt', AttributeType: 'S' } // Use 'S' for string data type
@@ -19,4 +19,4 @@ const vehiclechema = {
   ],
 };
 
-module.exports = vehiclechema;
+module.exports = movieSchema;

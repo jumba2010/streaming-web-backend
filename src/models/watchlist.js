@@ -1,7 +1,7 @@
 const constants = require("../utils/constants");
 
 const reviewSchema = {
-  TableName: constants.REVIEW_TABLE,
+  TableName: constants.WATCH_LIST_TABLE,
   AttributeDefinitions: [
     { AttributeName: 'id', AttributeType: 'S' },
     { AttributeName: 'createdAt', AttributeType: 'S' } // Use 'S' for string data type
