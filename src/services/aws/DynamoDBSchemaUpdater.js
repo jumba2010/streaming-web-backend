@@ -12,8 +12,8 @@ const sucursalSchema = require('../../models/sucursal');
 const logginInfoSchema = require('../../models/logininfo');
 const clientSchema = require('../../models/client');
 const visitSchema = require('../../models/visit');
-const favouriteSchema = require('../../models/favourite');
-const viewSchema = require('../../models/view');
+const favouriteSchema = require('../../models/favorites');
+const viewSchema = require('../../models/views');
 
 
 const movieTableUtility = new DynamoDBTableUtility(movieSchema.TableName, movieSchema);
